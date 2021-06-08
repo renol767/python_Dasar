@@ -282,8 +282,8 @@ class AnimatedSketchWindow(SketchWindow):
             cv2.imshow(self.name, self.background)
             cv2.waitKey(1)
 
-scale_velocity = 0.2
-num_win = 25
+scale_velocity = 0.6
+num_win = 100
 destroy = False # Whether a window should be destroyed when it reaches minimum size
 xmin, xmax, ymin, ymax = 0, winsize[0], 0, winsize[1]  # Area where a window can spawn
 windows = [AnimatedSketchWindow(name = str(i),
@@ -301,7 +301,7 @@ for i in range(len(windows)):
 def draw_windows():
     for i in range(len(windows)):
         windows[i].update()
-        windows[i].mask_img(ImageMask(filename="bila.jpg"))
+        windows[i].mask_img(ImageMask(filename='test.jpg'))
         if not windows[i].in_transition and windows[i].frame_expired >= randint(5, 15):
             if randint(0, 100) < 80:
                 if windows[i].w == windows[i].max_w:

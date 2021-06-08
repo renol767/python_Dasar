@@ -296,18 +296,17 @@ def single_ring(idx, radius, frame_count, speed=0.005, sidelen=400):
             winsize[1] / 2 + radius * sin(frame_count * speed + i * pi / 2),
             sidelen,
             sidelen,
-            bg=0
         )
         window_names.append(block_name)
         blocks.append(block)
-
     for i, block in enumerate(blocks):
         newx = block.x + radius * cos(frame_count * speed + i * pi / 2)
         newy = block.y + radius * sin(frame_count * speed + i * pi / 2)
         block.set_position(newx, newy)
-        block.mask_img(ImageMask(filename="test.jpg"))
+        block.mask_img(ImageMask(filename='bila.jpg'))
         block.update()
         block.draw()
+        
 
 
 def draw_swirl_blocks(framecount, radius=100, num=1, speed=0.005):
@@ -321,7 +320,6 @@ def main():
     while True:
         draw_swirl_blocks(frame_count, num=8)
         frame_count += 1
-
 
 if __name__ == '__main__':
     main()

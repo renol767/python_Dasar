@@ -284,19 +284,19 @@ class AnimatedSketchWindow(SketchWindow):
 earth_orbit_radius = 200
 sun_orbit_radius = 400
 
-earth = AnimatedSketchWindow("earth", x=winsize[0]/2 - sun_orbit_radius, y=winsize[1] / 2, w=300, h=300)
-sun = AnimatedSketchWindow("sun", x=winsize[0] / 2, y=winsize[1] / 2, w=300, h=300)
+earth = AnimatedSketchWindow("Love_3", x=winsize[0]/2 - sun_orbit_radius, y=winsize[1] / 2, w=720, h=637)
+# sun = AnimatedSketchWindow("sun", x=winsize[0] / 2, y=winsize[1] / 2, w=720, h=637)
 
-earth_img = cv2.resize(cv2.imread("bila.jpg"), (300, 300))
-sun_img = cv2.resize(cv2.imread("bila.jpg"), (300, 300))
+earth_img = cv2.resize(cv2.imread("bila.jpg"), (720, 637))
+# sun_img = cv2.resize(cv2.imread("bila.jpg"), (720, 637))
 
 earth.mask_img(ImageMask(image=earth_img, x=earth.x, y=earth.y))
-sun.mask_img(ImageMask(image=sun_img, x=sun.x, y=sun.y))
+# sun.mask_img(ImageMask(image=sun_img, x=sun.x, y=sun.y))
 
 day = 0
 while True:
-    earthx = sun.x + sun_orbit_radius*cos(day)
-    earthy = sun.y + sun_orbit_radius*sin(day)
-    earth.draw(earthx, earthy)
-    sun.draw()
+    # earthx = sun.x + sun_orbit_radius*cos(day)
+    # earthy = sun.y + sun_orbit_radius*sin(day)
+    earth.draw()
+    # sun.draw()
     day+=.01
